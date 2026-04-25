@@ -408,7 +408,6 @@ section {
   transition: all 0.4s cubic-bezier(.25,.46,.45,.94);
   position: relative;
   overflow: hidden;
-  cursor: none;
 }
 .adv-card::before {
   content: '';
@@ -514,7 +513,6 @@ section {
   text-align: center;
   transition: all 0.35s ease;
   overflow: hidden;
-  cursor: none;
 }
 .member::after {
   content: '';
@@ -575,6 +573,156 @@ footer {
 .footer-copy {
   font-size: 13px;
   color: var(--text-muted);
+}
+
+/* ─── MOBILE RESPONSIVE ─── */
+@media (max-width: 768px) {
+  /* Nav */
+  nav {
+    padding: 18px 20px;
+  }
+  nav ul {
+    gap: 18px;
+  }
+  nav ul li a {
+    font-size: 13px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 0 20px;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    align-items: flex-start;
+    min-height: 100svh;
+  }
+  .hero h1 {
+    font-size: clamp(44px, 13vw, 72px);
+    letter-spacing: -2px;
+  }
+  .hero-sub {
+    font-size: 15px;
+    max-width: 100%;
+  }
+  .hero-cta {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .btn-primary, .btn-ghost {
+    text-align: center;
+    padding: 14px 24px;
+    width: 100%;
+  }
+  .scroll-hint {
+    left: 20px;
+    bottom: 24px;
+  }
+  .orb-1 { width: 300px; height: 300px; top: -80px; right: -60px; }
+  .orb-2 { width: 220px; height: 220px; }
+
+  /* Stats bar */
+  .stats-bar {
+    flex-wrap: wrap;
+  }
+  .stat {
+    flex: 1 1 50%;
+    padding: 24px 16px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .stat:nth-child(odd) { border-right: 1px solid var(--border); }
+  .stat:last-child { border-bottom: none; }
+  .stat:nth-child(3) { border-bottom: none; }
+  .stat-number { font-size: 32px; }
+  .stat-label { font-size: 10px; letter-spacing: 1px; }
+
+  /* Sections */
+  section {
+    padding: 72px 20px;
+  }
+  .section-header {
+    margin-bottom: 40px;
+  }
+  .section-title {
+    font-size: clamp(28px, 8vw, 40px);
+    letter-spacing: -1px;
+  }
+
+  /* About */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-visual {
+    height: 280px;
+  }
+  .turbine-svg {
+    width: 140px;
+    height: 140px;
+  }
+  .about-text p {
+    font-size: 15px;
+  }
+
+  /* Advantages */
+  .adv-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .adv-card {
+    padding: 24px 18px;
+  }
+  .adv-title { font-size: 16px; }
+  .adv-desc { font-size: 13px; }
+  .adv-number { font-size: 44px; }
+
+  /* Steps */
+  .steps {
+    grid-template-columns: 1fr;
+    border-radius: 16px;
+  }
+  .step {
+    padding: 32px 24px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num { font-size: 52px; }
+  .step-title { font-size: 18px; }
+  .step-desc { font-size: 14px; }
+
+  /* Team */
+  .team-grid {
+    gap: 12px;
+  }
+  .member {
+    width: calc(50% - 6px);
+    padding: 24px 16px;
+  }
+
+  /* Footer */
+  footer {
+    flex-direction: column;
+    gap: 10px;
+    padding: 28px 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .adv-grid {
+    grid-template-columns: 1fr;
+  }
+  .member {
+    width: 100%;
+  }
+  nav ul {
+    gap: 12px;
+  }
+  nav ul li a {
+    font-size: 12px;
+  }
 }
 
 /* ─── SCROLL REVEAL ─── */
